@@ -1,9 +1,19 @@
-// import Image from "next/image";
+import Login from "./login/page"
+import BikeOverview from "./bikes/page"
+import PeopleOverview from "./waitinglist/page"
 
 export default function Home() {
-  return (
-    <div className="">
-        <h1>HOME</h1>
-    </div>
-  );
+    const loggedIn = true
+    return (
+        <div className="w-full flex justify-center">
+            {loggedIn ? (
+                <>
+                    <BikeOverview />
+                    <PeopleOverview />
+                </>
+            ) : (
+                <Login />
+            )}
+        </div>
+    )
 }
